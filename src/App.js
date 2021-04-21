@@ -34,12 +34,10 @@ function App() {
           <Route path="/login">
         <Login></Login>
           </Route>
-          <Route path="/checkOut/:serviceId">
+          <PrivateRoute path="/checkOut/:serviceId">
         <CheckOut></CheckOut>
-          </Route>
-          <PrivateRoute>
-
           </PrivateRoute>
+       
 
         </Switch>
       </Router>
