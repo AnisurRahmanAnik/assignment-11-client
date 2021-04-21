@@ -4,12 +4,23 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+ 
 } from "react-router-dom";
+import AddService from "./Components/Admin/AddService/AddService";
+import Login from "./Components/Login/Login";
+import { createContext, useState } from "react";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+
+import CheckOut from "./Components/Admin/CheckOut/CheckOut";
+export const UserContext = createContext()
+
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({})
 
   return (
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+
     <div>
 
       <Router>
@@ -17,12 +28,26 @@ function App() {
           <Route exact path="/">
           <Home></Home>
           </Route>
+          <PrivateRoute path="/admin">
+        <AddService></AddService>
+          </PrivateRoute>
+          <Route path="/login">
+        <Login></Login>
+          </Route>
+          <Route path="/checkOut/:serviceId">
+        <CheckOut></CheckOut>
+          </Route>
+          <PrivateRoute>
+
+          </PrivateRoute>
 
         </Switch>
       </Router>
      
       
     </div>
+    </UserContext.Provider>
+
   );
 }
 

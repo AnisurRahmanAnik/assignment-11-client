@@ -9,7 +9,7 @@ const Navbar = () => {
     return (
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <Link to="/home" style={{ textDecoration: 'none' }}>
+        <Link to="/" style={{ textDecoration: 'none' }}>
           <a class="navbar-brand ms-3 fs-4" href="...">Fix it</a>
         </Link>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" >
@@ -19,7 +19,7 @@ const Navbar = () => {
           <ul class="navbar-nav ms-auto p-2">
             
             <li class="nav-item">
-              <Link to="/home" style={{ textDecoration: 'none' }}>
+              <Link to="/" style={{ textDecoration: 'none' }}>
                 <a class="nav-link active fs-5 ms-3" aria-current="page" href="...">Home</a>
               </Link>
             </li>
